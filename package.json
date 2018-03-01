@@ -1,0 +1,17 @@
+{
+  "name": "play",
+  "version": "1.0.0",
+  "description": "parcel vue",
+  "main": "index.js",
+  "repository": "git@github.com:Shangyunliang/play.git",
+  "author": "shangyunliang <shangyunliang@xiaomi.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build index.html --public-url ./",
+    "dev": "parcel -p 8080 index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.2"
+  }
+}
