@@ -9,17 +9,22 @@ notifications:
   email:
     recipients:
     - shangyunliang@xiaomi.com
-    on_success: never
+    on_success: always
     on_failure: always
 before_install:
-- rm -rf ~/.ssh/id_rsa
-- openssl aes-256-cbc -K $encrypted_316decf98675_key -iv $encrypted_316decf98675_iv
+- openssl aes-256-cbc -K $encrypted_d4b70a09816a_key -iv $encrypted_d4b70a09816a_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
-- echo -e "Host 123.207.167.23\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- cat ~/.ssh/config
+- echo -e "Host 39.107.102.216\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
 - tar -cvjpf dist.tar.bz2 ./dist
-- scp dist.tar.bz2 root@123.207.167.23:/var/www
+- scp dist.tar.bz2 root@39.107.102.216:/var/www
+- ssh root@39.107.102.216
+  'cd /var/www
+  && nginx -s stop
+  && rm -rf dist
+  && tar -xjvf dist.tar.bz2
+  && nginx
+  && rm -rf dist.tar.bz2'
 addons:
-  ssh_known_hosts: 123.207.167.23
+  ssh_known_hosts: 39.107.102.216
