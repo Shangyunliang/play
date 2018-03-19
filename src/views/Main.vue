@@ -4,8 +4,8 @@
     <el-container>
       <el-aside width="auto"><app-menu :isCollapse="isCollapse"></app-menu></el-aside>
       <el-container>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
+        <el-main><intro></intro></el-main>
+        <el-footer><app-footer></app-footer></el-footer>
       </el-container>
     </el-container>
   </el-container>
@@ -13,7 +13,9 @@
 
 <script>
   import AppHeader from './Header.vue';
+  import AppFooter from './Footer.vue';
   import AppMenu from './Menu.vue';
+  import Intro from './Intro.vue';
   // console.log(AppHeader);
   export default {
     name: "Main",
@@ -24,7 +26,9 @@
     },
     components: {
       AppHeader,
+      AppFooter,
       AppMenu,
+      Intro,
     },
     methods: {
       handleChangeCollapse: function(flag){
