@@ -163,7 +163,7 @@ export default {
       this.$refs.ruleForm.resetFields();
     },
     handleSubmit() {
-      this.$router.push({ path: "/main/portrait" });
+      this.$router.push({ path: "/" });
     }
   }
 };

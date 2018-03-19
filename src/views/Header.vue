@@ -22,13 +22,15 @@
       return {
         activeIndex: '1',
         activeIndex2: '1',
-        isCollapse: true
+        isCollapse: false
       };
     },
     methods: {
       handleSelect(key, keyPath) {
-        this.isCollapse = !this.isCollapse
-        this.$emit('handleChangeCollapse', this.isCollapse)
+       if(key == 0) {
+         this.isCollapse = !this.isCollapse
+         this.$emit('handleChangeCollapse', this.isCollapse)
+       }
       }
     }
   }

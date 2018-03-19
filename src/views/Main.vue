@@ -2,7 +2,7 @@
   <el-container>
     <el-header><app-header @handleChangeCollapse="handleChangeCollapse"></app-header></el-header>
     <el-container>
-      <el-aside width="200px"><app-menu :isCollapse="isCollapse"></app-menu></el-aside>
+      <el-aside width="auto"><app-menu :isCollapse="isCollapse"></app-menu></el-aside>
       <el-container>
         <el-main>Main</el-main>
         <el-footer>Footer</el-footer>
